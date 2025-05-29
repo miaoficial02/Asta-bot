@@ -108,24 +108,6 @@ apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
 
 ```bash
 git clone https://github.com/Fer280809/Asta_bot && cd Asta_bot
-```
-
-```bash
-sudo apt update
-```
-
-```bash
-sudo apt install nodejs npm
-```
-
-```bash
-sudo yum install nodejs npm
-```
-
-```bash
-node -v
-npm -v
-```
 
 ```bash
 yarn install 
