@@ -1,14 +1,11 @@
-/* Código creado por @Emma (Violet's Versión) @Elpapiema
-
-Parchado y adaptado por @The-King-Destroy. */
-
-import fetch from 'node-fetch'
+import fs from 'fs'
+import path from 'path'
 
 const handler = async (m, { text, usedPrefix, command, conn }) => {
     const args = text.split(',').map(arg => arg.trim())
 
     if (args.length < 7) {
-        return m.reply(`❀ Por favor ingresé la info del personaje.\n✧ Ejemplo: ${usedPrefix}${command} <Nombre del personaje>, <Género>, <Valor>, <Origen>, <Enlace de imagen 1>, <Enlace de imagen 2>, <Enlace de imagen 3>\n\n> Nota: los links deben estar en catbox.moe o en qu.ax si se usa qu.ax se debe configurar como permanente.`)
+        return m.reply(`❀ Por favor ingresé la info del personaje.\n✧ Ejemplo: ${usedPrefix}${command} <Nombre del personaje>, <Género>, <Valor>, <Origen>, <Enlace de imagen 1>, <Enlace de imagen 2>, <Enlace de imagen 3>`)
     }
 
     const [name, gender, value, source, img1, img2, img3] = args
@@ -17,6 +14,21 @@ const handler = async (m, { text, usedPrefix, command, conn }) => {
         return m.reply('✧ Por favor, proporciona enlaces válidos para las imágenes.')
     }
 
+    // Ruta absoluta al archivo de personajes
+    const dbPath = path.join(process.cwd(), 'src', 'database', 'characters.json')
+
+    // Cargar la base actual de personajes
+    let characters = []
+    if (fs.existsSync(dbPath)) {
+        try {
+            const data = fs.readFileSync(dbPath, 'utf-8')
+            characters = JSON.parse(data)
+        } catch (e) {
+            characters = []
+        }
+    }
+
+    // Crear nuevo personaje
     const characterData = {
         id: Date.now().toString(),
         name,
@@ -30,12 +42,17 @@ const handler = async (m, { text, usedPrefix, command, conn }) => {
         votes: 0
     }
 
-    const tagNumber = '524181450063@s.whatsapp.net'
+    // Agregar a la lista y guardar
+    characters.push(characterData)
+    fs.writeFileSync(dbPath, JSON.stringify(characters, null, 2), 'utf-8')
 
-    const jsonMessage = `❀ Nuevo personaje añadido ❀\n\n\`\`\`${JSON.stringify(characterData, null, 2)}\`\`\``
+    // Notificar al staff principal
+    const tagNumber = '524181450063@s.whatsapp.net'
+    const jsonMessage = `❀ Nuevo personaje añadido ❀\n\n\`\`\`${JSON.stringify(characterData, null, 2)}\`\`\`\n\nEnviado por: wa.me/${m.sender.replace(/[^0-9]/g, '')}`
     await conn.sendMessage(tagNumber, { text: jsonMessage })
 
-    m.reply(`❀ El personaje *"${name}"* se envió al staff para su posterior adicción.`)
+    // Mensaje de éxito al usuario
+    m.reply(`❀ El personaje *"${name}"* fue añadido exitosamente y notificado al staff.`)
 }
 
 handler.command = ['addcharacter', 'addrw']
