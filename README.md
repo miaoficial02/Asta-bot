@@ -55,22 +55,22 @@
 <div align="center">
 
 ```
-🔶 PASO 1: 3dev
+🔶 PASO 1: #dev
 ```
 > Activa el modo desarrollador para personalizar tu bot
 
 ```
-🔷 PASO 2: 3setmodena
+🔷 PASO 2: #setmodena
 ```
 > Establece el modo de nombre para tu bot
 
 ```
-🔸 PASO 3: 3setbanner
+🔸 PASO 3: #setbanner
 ```
 > Personaliza el banner de tu bot con imágenes personalizadas
 
 ```
-🔹 PASO 4: 3setname
+🔹 PASO 4: #setname
 ```
 > Cambia el nombre de tu bot a tu gusto
 
@@ -108,6 +108,23 @@ apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
 
 ```bash
 git clone https://github.com/Fer280809/Asta_bot && cd Asta_bot
+```
+
+```bash
+sudo apt update
+```
+
+```bash
+sudo apt install nodejs npm
+```
+
+```bash
+sudo yum install nodejs npm
+```
+
+```bash
+node -v
+npm -v
 ```
 
 ```bash
