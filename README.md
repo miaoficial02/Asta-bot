@@ -101,18 +101,15 @@ href="https://www.mediafire.com/file/llugt4zgj7g3n3u/com.termux_1020.apk/file"><
 ```bash
 termux-setup-storage
 ```
-
 ```bash
 apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
 ```
-
 ```bash
 git clone https://github.com/Fer280809/Asta_bot && cd Asta_bot
-
+```
 ```bash
 yarn install 
 ```
-
 ```bash
 npm install
 ```
