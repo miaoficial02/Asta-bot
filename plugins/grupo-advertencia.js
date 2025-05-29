@@ -1,39 +1,40 @@
 const handler = async (m, { conn, text, command, usedPrefix }) => {
-// if (m.mentionedJid.includes(conn.user.jid)) return; // Evitar advertir al bot mismo
-const pp = './src/catalogo.jpg'
-let number, ownerNumber, aa, who;
-if (m.isGroup) { 
-who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text; 
-} else who = m.chat;
-  const user = global.db.data.users[who];
-  const usuario = conn.user.jid.split`@`[0] + '@s.whatsapp.net'
-  const bot = global.db.data.settings[conn.user.jid] || {};
-  const dReason = 'Sin motivo';
-  const msgtext = text || dReason 
-  const sdms = msgtext.replace(/@\d+-?\d* /g, '');
-  const warntext = `${emoji} Etiquete a una persona o responda a un mensaje del grupo para advertir al usuario.`;
-  if (!who) {
-return m.reply(warntext, m.chat, { mentions: conn.parseMention(warntext) });
+  // Evita advertir al propio bot
+  if (m.mentionedJid && m.mentionedJid.includes(conn.user.jid)) return m.reply('❌ No puedes advertir al bot.');
+  let who;
+  if (m.isGroup) {
+    who = m.mentionedJid && m.mentionedJid[0]
+      ? m.mentionedJid[0]
+      : m.quoted
+      ? m.quoted.sender
+      : '';
+  } else {
+    who = m.chat;
+  }
+  if (!who || !(who in global.db.data.users)) {
+    let warntext = `⚠️ Etiqueta a un usuario o responde un mensaje para advertir.\nEjemplo: *${usedPrefix + command} @usuario*`;
+    return m.reply(warntext, m.chat, { mentions: conn.parseMention(warntext) });
   }
 
-for (let i = 0; i < global.owner.length; i++) {
-ownerNumber = global.owner[i][0];
-if (usuario.replace(/@s\.whatsapp\.net$/, '') === ownerNumber) {
-aa = ownerNumber + '@s.whatsapp.net'
-await conn.reply(m.chat, `…`, m, { mentions: [aa] })
-return
-}}
+  // Evita advertir a los dueños (owners)
+  for (let i = 0; i < global.owner.length; i++) {
+    let ownerNumber = global.owner[i][0];
+    if (who.replace(/@s\.whatsapp\.net$/, '') === ownerNumber) {
+      return m.reply('❌ No puedes advertir a un owner.');
+    }
+  }
 
-  user.warn += 1;
-  await m.reply(`${user.warn == 1 ? `*@${who.split`@`[0]}*` : `*@${who.split`@`[0]}*`} Recibio una advertencia en este grupo!.\nMotivo: ${sdms}\n*Advertencias: ${user.warn}/3*`, null, { mentions: [who] },
-  );
+  const user = global.db.data.users[who];
+  const motivo = text ? text.replace(/@\d+-?\d*/g, '').trim() : 'Sin motivo';
+  user.warn = (user.warn || 0) + 1;
+
+  await m.reply(`⚠️ *@${who.split`@`[0]}* ha recibido una advertencia.\nMotivo: ${motivo}\n*Advertencias: ${user.warn}/3*`, null, { mentions: [who] });
+
   if (user.warn >= 3) {
     user.warn = 0;
-    await m.reply(`${emoji} Te lo adverti varias veces!!!.\n*@${who.split`@`[0]}* Superaste las *3* advertencias, ahora seras eliminado/a.`, null, { mentions: [who] },
-    );
+    await m.reply(`🚫 *@${who.split`@`[0]}* superó las 3 advertencias y será eliminado.`, null, { mentions: [who] });
     await conn.groupParticipantsUpdate(m.chat, [who], 'remove');
   }
-  return !1;
 };
 
 handler.command = ['advertir', 'advertencia', 'warn', 'warning'];
