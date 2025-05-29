@@ -523,20 +523,20 @@ function purgeSessionSB() {
     if (SBprekey.length === 0) {
       console.log(
         chalk.bold.green(
-          `\n╭» ❍ ${jadi} ❍\n│→ NADA POR ELIMINAR \n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ⌫ ♻︎`
+          `\n╭» ❍ ${jadi} ❍\n│→ 🧹 No hay archivos temporales que eliminar.\n╰───────────────────────────────────────────────♻️`
         )
       )
     } else {
       console.log(
         chalk.bold.cyanBright(
-          `\n╭» ❍ ${jadi} ❍\n│→ ARCHIVOS NO ESENCIALES ELIMINADOS\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ⌫ ♻︎︎`
+          `\n╭» ❍ ${jadi} ❍\n│→ 🧹 Archivos temporales innecesarios eliminados correctamente.\n╰───────────────────────────────────────────────♻️`
         )
       )
     }
   } catch (err) {
     console.log(
       chalk.bold.red(
-        `\n╭» ❍ ${jadi} ❍\n│→ OCURRIÓ UN ERROR\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ⌫ ♻\n` +
+        `\n╭» ❍ ${jadi} ❍\n│→ ⚠️ Ocurrió un error al limpiar archivos temporales.\n╰───────────────────────────────────────────────🛑\n` +
           err
       )
     )
@@ -555,14 +555,14 @@ function purgeOldFiles() {
             if (err) {
               console.log(
                 chalk.bold.red(
-                  `\n╭» ❍ ARCHIVO ❍\n│→ ${file} NO SE LOGRÓ BORRAR\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ⌫ ✘\n` +
+                  `\n╭» ❍ ARCHIVO ❍\n│→ ❌ No se pudo eliminar el archivo: ${file}\n╰──────────────────────────────🛑\n` +
                     err
                 )
               )
             } else {
               console.log(
                 chalk.bold.green(
-                  `\n╭» ❍ ARCHIVO ❍\n│→ ${file} BORRADO CON ÉXITO\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ⌫ ♻`
+                  `\n╭» ❍ ARCHIVO ❍\n│→ 🗑️ Archivo eliminado exitosamente: ${file}\n╰──────────────────────────────♻️`
                 )
               )
             }
@@ -592,7 +592,7 @@ setInterval(async () => {
   await clearTmp()
   console.log(
     chalk.bold.cyanBright(
-      `\n╭» ❍ MULTIMEDIA ❍\n│→ ARCHIVOS DE LA CARPETA TMP ELIMINADAS\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ⌫ ♻`
+      `\n╭» ❍ MULTIMEDIA ❍\n│→ 🧹 Archivos temporales de la carpeta TMP eliminados correctamente.\n╰───────────────────────────────────────────────♻️`
     )
   )
 }, 1000 * 60 * 4) // 4 min
@@ -602,7 +602,7 @@ setInterval(async () => {
   await purgeSession()
   console.log(
     chalk.bold.cyanBright(
-      `\n╭» ❍ ${global.sessions} ❍\n│→ SESIONES NO ESENCIALES ELIMINADAS\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ⌫ ♻`
+      `\n╭» ❍ ${global.sessions} ❍\n│→ 🗑️ Sesiones no esenciales eliminadas.\n╰───────────────────────────────────────────────♻️`
     )
   )
 }, 1000 * 60 * 10) // 10 min
@@ -617,7 +617,7 @@ setInterval(async () => {
   await purgeOldFiles()
   console.log(
     chalk.bold.cyanBright(
-      `\n╭» ❍ ARCHIVOS ❍\n│→ ARCHIVOS RESIDUALES ELIMINADAS\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ⌫ ♻`
+      `\n╭» ❍ ARCHIVOS ❍\n│→ 🧹 Archivos residuales eliminados correctamente.\n╰───────────────────────────────────────────────♻️`
     )
   )
 }, 1000 * 60 * 10)
