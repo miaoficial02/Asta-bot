@@ -52,7 +52,7 @@ let handler = async (m, { conn, usedPrefix }) => {
         setTimeout(async () => {
             try {
                 await conn.sendMessage(m.chat, {
-                    text: `*📢 ACLARACIÓN 📢*\n\nEste bot fue creado con permiso del creador original (${creatorNumber}) pero no es el bot oficial.\n\nEl único bot oficial es: ${officialBotNumber}\n\nGracias por tu comprensión.`,
+                    text: `*📢 ACLARACIÓN 📢*\n\nEste bot fue vincula de forma gratuita por github y mi creador es (${creatorNumber}) pero no es el bot oficial.\n\nEl único bot oficial es: ${officialBotNumber}\n\nGracias por tu comprensión.`,
                     mentions: [m.sender]
                 });
             } catch (error) {
