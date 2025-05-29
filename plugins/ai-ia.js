@@ -2,11 +2,6 @@ import axios from 'axios'
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
-    // Verificar si el mensaje fue marcado como bloqueado
-    if (m.isBlocked) {
-        return // No procesar si está bloqueado
-    }
-    
     const isQuotedImage = m.quoted && (m.quoted.msg || m.quoted).mimetype && (m.quoted.msg || m.quoted).mimetype.startsWith('image/')
     const username = `${conn.getName(m.sender)}`
     const basePrompt = `Tu nombre es ${botname} y parece haber sido creada por ${etiqueta}. Tu versión actual es ${vs}, Tú usas el idioma Español. Llamarás a las personas por su nombre ${username}, te gusta ser divertida, y te encanta aprender. Lo más importante es que debes ser amigable con la persona con la que estás hablando. ${username}`
@@ -32,48 +27,6 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
     } else {
         if (!text) { 
             return conn.reply(m.chat, `${emoji} Ingrese una petición para que el ChatGpT lo responda.`, m)
-        }
-        
-        // Verificación adicional de seguridad
-        const blockedKeywords = [
-            // Comandos de owner
-            'addowner', 'delowner', 'owner', 'setowner',
-            // Comandos de administración
-            'ban', 'unban', 'kick', 'promote', 'demote', 'banuser', 'unbanuser',
-            'enable', 'disable', 'on', 'off', 'autoadmin',
-            // Comandos de sistema
-            'restart', 'reiniciar', 'update', 'exec', 'eval',
-            'backup', 'copia', 'restore', 'reset', 'cleanfiles', 'cleartmp', 'vaciartmp',
-            // Comandos de prefijo y configuración
-            'setprefix', 'prefix', 'resetprefix', 'setpp', 'setbio', 'setstatus',
-            'setname', 'setimage', 'setpfp', 'setavatar', 'setbanner', 'setmoneda',
-            // Comandos de broadcast y grupos
-            'broadcastgroup', 'bc', 'broadcast', 'bcgc', 'grouplist', 'listgroup',
-            'join', 'invite', 'leave', 'salir', 'newgc', 'creargc',
-            // Comandos de plugins y archivos
-            'deleteplugin', 'saveplugin', 'getplugin', 'plugin', 'savejs', 'savefile',
-            'deletefile', 'get', 'fetch',
-            // Comandos de usuarios y premium
-            'addcoins', 'añadircoin', 'removecoin', 'quitarcoin',
-            'addexp', 'añadirxp', 'removexp', 'quitarxp',
-            'userpremium', 'addprem', 'delprem', 'remove',
-            'deletedatauser', 'resetuser',
-            // Comandos de bloqueo y listas
-            'block', 'unblock', 'listblock', 'blocklist',
-            'listban', 'banlist', 'banchat', 'unbanchat',
-            // Comandos especiales
-            'codigo', 'dsowner', 'delai', 'let', 'reunion', 'meeting',
-            'addcmd', 'setcmd', 'delcmd', 'cmdlist', 'listcmd',
-            'evento', 'crear', 'participar', 'lista', 'cancelar'
-        ]
-        const textLower = text.toLowerCase()
-        
-        for (let keyword of blockedKeywords) {
-            if (textLower.includes(keyword)) {
-                await m.react('❌')
-                await conn.reply(m.chat, '✘ Error: No puedo procesar solicitudes de comandos administrativos.', m)
-                return
-            }
         }
         
         await m.react(rwait)
@@ -133,6 +86,7 @@ async function luminsesi(q, username, logic) {
         console.error(`${msm} Error al obtener:`, error)
         throw error 
     }
+}
 }
 
 
