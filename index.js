@@ -90,6 +90,9 @@ const __dirname = global.__dirname(import.meta.url)
 global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
 global.prefix = new RegExp('^[#/!.]')
 
+global.sessions = 'session'
+const nameqr = 'AstaBot'
+
 global.db = new Low(
   /https?:\/\//.test(opts['db'] || '')
     ? new cloudDBAdapter(opts['db'])
@@ -144,7 +147,7 @@ let opcion
 if (methodCodeQR) {
   opcion = '1'
 }
-if (!methodCodeQR && !methodCode && !fs.existsSync(`./${sessions}/creds.json`)) {
+if (!methodCodeQR && !methodCode && !fs.existsSync(`./${global.sessions}/creds.json`)) {
   do {
     console.log(chalk.bold.cyan('\n═══════════════════════════════════════════════════════════'))
     console.log(chalk.bold.white('              🔗 MÉTODO DE VINCULACIÓN - ASTA BOT 🔗'))
@@ -161,7 +164,7 @@ if (!methodCodeQR && !methodCode && !fs.existsSync(`./${sessions}/creds.json`)) 
       console.log(chalk.bold.red('\n❌ Opción inválida. Solo se permiten 1 o 2.'))
       console.log(chalk.bold.yellow('ℹ️  Por favor elige una opción válida.\n'))
     }
-  } while (opcion !== '1' && opcion !== '2' || fs.existsSync(`./${sessions}/creds.json`))
+  } while (opcion !== '1' && opcion !== '2' || fs.existsSync(`./${global.sessions}/creds.json`))
 }
 
 console.info = () => {}
@@ -169,14 +172,11 @@ console.debug = () => {}
 
 const connectionOptions = {
   logger: pino({ level: 'silent' }),
-  printQRInTerminal: opcion == '1' ? true : methodCodeQR ? true : false,
+  printQRInTerminal: opcion == '1',
   mobile: MethodMobile,
-  browser:
-    opcion == '1'
-      ? [`${nameqr}`, 'Edge', '20.0.04']
-      : methodCodeQR
-      ? [`${nameqr}`, 'Edge', '20.0.04']
-      : ['Ubuntu', 'Edge', '110.0.1587.56'],
+  browser: opcion == '1'
+    ? [nameqr, 'Edge', '20.0.04']
+    : ['Ubuntu', 'Edge', '110.0.1587.56'],
   auth: {
     creds: state.creds,
     keys: makeCacheableSignalKeyStore(
@@ -198,8 +198,9 @@ const connectionOptions = {
 }
 
 global.conn = makeWASocket(connectionOptions)
+conn.ev.on('connection.update', connectionUpdate)
 
-if (!fs.existsSync(`./${sessions}/creds.json`)) {
+if (!fs.existsSync(`./${global.sessions}/creds.json`)) {
   if (opcion === '2' || methodCode) {
     opcion = '2'
     if (!conn.authState.creds.registered) {
@@ -212,11 +213,10 @@ if (!fs.existsSync(`./${sessions}/creds.json`)) {
           console.log(chalk.bold.white('            📞 CONFIGURACIÓN DE NÚMERO TELEFÓNICO 📞'))
           console.log(chalk.bold.cyan('═══════════════════════════════════════════════════════════'))
           phoneNumber = await question(
-            chalk.bgGreen.black.bold('\n📱 Ingresa tu número de WhatsApp completo:\n\n') +
-              chalk.bold.yellow('💡 Ejemplo: +573211234567 (incluye código de país)\n') +
-              chalk.bold.yellow('💡 México: +521234567890\n') +
-              chalk.bold.yellow('💡 Colombia: +573123456789\n') +
-              chalk.bold.yellow('💡 España: +34612345678\n\n') +
+            chalk.bgGreen.black.bold('\n📱 Ingresa tu número de WhatsApp completo (ej: 573211234567):\n\n') +
+              chalk.bold.yellow('💡 México: 521234567890\n') +
+              chalk.bold.yellow('💡 Colombia: 573123456789\n') +
+              chalk.bold.yellow('💡 España: 34612345678\n\n') +
               chalk.bold.cyan('🔹 Tu número: ')
           )
           phoneNumber = phoneNumber.replace(/\D/g, '')
@@ -263,7 +263,7 @@ if (!opts['test']) {
 }
 
 async function connectionUpdate(update) {
-  const { connection, lastDisconnect, isNewLogin } = update
+  const { connection, lastDisconnect, isNewLogin, qr } = update
   global.stopped = connection
   if (isNewLogin) conn.isInit = true
   const code =
@@ -274,8 +274,8 @@ async function connectionUpdate(update) {
     global.timestamp.connect = new Date()
   }
   if (global.db.data == null) loadDatabase()
-  if (update.qr != 0 && update.qr != undefined || methodCodeQR) {
-    if (opcion == '1' || methodCodeQR) {
+  if (qr) {
+    if (opcion == '1') {
       console.log(chalk.bold.cyan('\n═══════════════════════════════════════════════════════════'))
       console.log(chalk.bold.white('                   📱 CÓDIGO QR - WHATSAPP 📱'))
       console.log(chalk.bold.cyan('═══════════════════════════════════════════════════════════'))
