@@ -1,29 +1,50 @@
-import { exec } from 'child_process';
+import { exec } from 'child_process'
+import util from 'util'
+const execAsync = util.promisify(exec)
 
 let handler = async (m, { conn }) => {
-  m.reply(`${emoji2} Actualizando el bot...`);
+  await m.reply('⏳ Buscando actualizaciones en el repositorio, espera...')
 
-  exec('git pull', (err, stdout, stderr) => {
-    if (err) {
-      conn.reply(m.chat, `${msm} Error: No se pudo realizar la actualización.\nRazón: ${err.message}`, m);
-      return;
+  try {
+    // Forzar actualización desde la rama principal (main)
+    let { stdout: fetchOut, stderr: fetchErr } = await execAsync('git fetch --all', { cwd: process.cwd() })
+    let { stdout: resetOut, stderr: resetErr } = await execAsync('git reset --hard origin/main', { cwd: process.cwd() })
+
+    // Verifica si npm está instalado
+    let npmExists = true
+    try {
+      await execAsync('npm -v')
+    } catch {
+      npmExists = false
     }
 
-    if (stderr) {
-      console.warn('Advertencia durante la actualización:', stderr);
+    let npmMsg = 'npm no está instalado o no está en el PATH, omitiendo instalación de dependencias.'
+    if (npmExists) {
+      let { stdout: npmOut, stderr: npmErr } = await execAsync('npm install', { cwd: process.cwd() })
+      npmMsg = npmOut || npmErr
     }
 
-    if (stdout.includes('Already up to date.')) {
-      conn.reply(m.chat, `${emoji4} El bot ya está actualizado.`, m);
-    } else {
-      conn.reply(m.chat, `${emoji} Actualización realizada con éxito.\n\n${stdout}`, m);
-    }
-  });
-};
+    await m.reply(
+      `✅ Bot ACTUALIZADO correctamente desde GitHub.\n\n` +
+      `*GIT FETCH:*\n${fetchOut || fetchErr}\n` +
+      `*GIT RESET:*\n${resetOut || resetErr}\n` +
+      `*NPM INSTALL:*\n${npmMsg}`
+    )
 
-handler.help = ['update'];
-handler.tags = ['owner'];
-handler.command = ['update'];
-handler.rowner = true;
+    if (global.db && global.db.write) await global.db.write()
+    await m.reply('♻️ Reiniciando el bot para aplicar los cambios...')
+    if (process.send) process.send('reset')
+    else await m.reply('⚠️ El bot debe reiniciarse manualmente (usa pm2, npm restart, o vuelve a iniciar el proceso).')
+  } catch (e) {
+    await m.reply('❌ Error al actualizar:\n' + (e.stderr || e.message || e))
+  }
+}
+
+handler.help = ['update']
+handler.tags = ['owner']
+handler.command = ['update']
+handler.rowner = true
+
+export default handler
 
 export default handler;
