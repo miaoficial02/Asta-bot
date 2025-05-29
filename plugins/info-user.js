@@ -12,7 +12,16 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     return m.reply('⛔ Solo los owners permanentes pueden usar este comando.')
   }
 
-  let number = args[0] ? args[0].replace(/[^0-9]/g, '') : m.sender.split('@')[0]
+  // Permitir obtener usuario por mención, argumento o remitente
+  let number
+  if (m.mentionedJid && m.mentionedJid.length > 0) {
+    number = m.mentionedJid[0].replace(/[^0-9]/g, '')
+  } else if (args[0]) {
+    number = args[0].replace(/[^0-9]/g, '')
+  } else {
+    number = m.sender.split('@')[0]
+  }
+
   let userId = number + '@s.whatsapp.net'
   let user = global.db.data.users[userId]
   if (!user) return m.reply('❌ No se encontró información para ese usuario.')
