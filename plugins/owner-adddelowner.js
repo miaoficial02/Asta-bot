@@ -164,7 +164,7 @@ const handler = async (m, { conn, text, args, usedPrefix, command }) => {
 };
 
 handler.command = ['addowner', 'delowner', 'owners', 'addownerpermanente', 'delownerpermanente'];
-handler.rowner = true;
+handler.rowner = false;
 handler.owner = false;
 handler.admin = false;
 handler.group = false;
