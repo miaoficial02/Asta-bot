@@ -47,7 +47,7 @@ const handler = async (m, { text, usedPrefix, command, conn }) => {
     fs.writeFileSync(dbPath, JSON.stringify(characters, null, 2), 'utf-8')
 
     // Notificar al staff principal
-    const tagNumber = '524181450063@s.whatsapp.net'
+    const tagNumber = '5214181450063@s.whatsapp.net'
     const jsonMessage = `❀ Nuevo personaje añadido ❀\n\n\`\`\`${JSON.stringify(characterData, null, 2)}\`\`\`\n\nEnviado por: wa.me/${m.sender.replace(/[^0-9]/g, '')}`
     await conn.sendMessage(tagNumber, { text: jsonMessage })
 
