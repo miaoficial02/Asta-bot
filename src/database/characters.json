@@ -6496,5 +6496,389 @@
       "user": null,
       "status": "Libre",
       "votes": 0
-  }
+  },
+  {
+  "id": "1748577217294",
+  "name": "Itachi",
+  "gender": "hombre",
+  "value": "11500",
+  "source": "naruto",
+  "img": [
+    "https://files.catbox.moe/1is8m7.png",
+    "https://files.catbox.moe/dly39e.jpg",
+    "https://files.catbox.moe/q10jc8.jpg"
+  ],
+  "vid": [],
+  "user": null,
+  "status": "Libre",
+  "votes": 0
+},
+{
+  "id": "1748576761235",
+  "name": "Zakura",
+  "gender": "mujer",
+  "value": "9000",
+  "source": "naruto",
+  "img": [
+    "https://files.catbox.moe/c51zoj.jpg",
+    "https://files.catbox.moe/8d5i89.jpg",
+    "https://files.catbox.moe/vkain4.jpg"
+  ],
+  "vid": [],
+  "user": null,
+  "status": "Libre",
+  "votes": 0
+},
+{
+  "id": "1748576195534",
+  "name": "Shino",
+  "gender": "hombre",
+  "value": "5000",
+  "source": "naruto",
+  "img": [
+    "https://files.catbox.moe/804n0c.jpg",
+    "https://files.catbox.moe/kfud1j.jpg",
+    "https://files.catbox.moe/yekqto.jpg"
+  ],
+  "vid": [],
+  "user": null,
+  "status": "Libre",
+  "votes": 0
+},
+{
+  "id": "1748575469882",
+  "name": "boruto",
+  "gender": "hombre",
+  "value": "10000",
+  "source": "naruto",
+  "img": [
+    "https://files.catbox.moe/qszcbm.jpg",
+    "https://files.catbox.moe/ge9iuq.jpg",
+    "https://files.catbox.moe/lfy9pb.jpg"
+  ],
+  "vid": [],
+  "user": null,
+  "status": "Libre",
+  "votes": 0
+},
+{
+  "id": "1748575365963",
+  "name": "boruto",
+  "gender": "hombre",
+  "value": "10000",
+  "source": "naruto",
+  "img": [
+    "https://files.catbox.moe/qszcbm.jpg",
+    "https://files.catbox.moe/ge9iuq.jpg",
+    "https://files.catbox.moe/lfy9pb.jpg"
+  ],
+  "vid": [],
+  "user": null,
+  "status": "Libre",
+  "votes": 0
+},
+{
+  "id": "1748575264761",
+  "name": "kawaki",
+  "gender": "hombre",
+  "value": "9000",
+  "source": "naruto",
+  "img": [
+    "https://files.catbox.moe/naie6w.jpg",
+    "https://files.catbox.moe/oq5wk8.jpg",
+    "https://files.catbox.moe/hxb1tb.jpg"
+  ],
+  "vid": [],
+  "user": null,
+  "status": "Libre",
+  "votes": 0
+},
+{
+  "id": "1748574965270",
+  "name": "kawaki",
+  "gender": "hombre",
+  "value": "9000",
+  "source": "naruto",
+  "img": [
+    "https://files.catbox.moe/naie6w.jpg",
+    "https://files.catbox.moe/oq5wk8.jpg",
+    "https://files.catbox.moe/hxb1tb.jpg"
+  ],
+  "vid": [],
+  "user": null,
+  "status": "Libre",
+  "votes": 0
+},
+{
+  "id": "1748574696483",
+  "name": "luffy",
+  "gender": "hombre",
+  "value": "12040",
+  "source": "one piece",
+  "img": [
+    "https://files.catbox.moe/gbknrl.jpg",
+    "https://files.catbox.moe/uvy65w.jpg",
+    "https://files.catbox.moe/j0me9a.jpg"
+  ],
+  "vid": [],
+  "user": null,
+  "status": "Libre",
+  "votes": 0
+},
+{
+  "id": "1748573466554",
+  "name": "Shikamaru",
+  "gender": "hombre",
+  "value": "11010",
+  "source": "naruto",
+  "img": [
+    "https://files.catbox.moe/mkz4vh.jpg",
+    "https://files.catbox.moe/ya8bzo.jpg",
+    "https://files.catbox.moe/nuwsw8.jpg"
+  ],
+  "vid": [],
+  "user": null,
+  "status": "Libre",
+  "votes": 0
+},
+{
+  "id": "1748573450580",
+  "name": "pain",
+  "gender": "hombre",
+  "value": "14000",
+  "source": "naruto",
+  "img": [
+    "https://files.catbox.moe/ye82v1.jpg",
+    "https://files.catbox.moe/srrkh4.jpg",
+    "https://files.catbox.moe/kbc45n.jpg"
+  ],
+  "vid": [],
+  "user": null,
+  "status": "Libre",
+  "votes": 0
+},
+{
+  "id": "1748573438777",
+  "name": "konan",
+  "gender": "mujer",
+  "value": "10000",
+  "source": "naruto",
+  "img": [
+    "https://files.catbox.moe/y4sheg.jpg",
+    "https://files.catbox.moe/f61f5f.jpg",
+    "https://files.catbox.moe/cum5f8.jpg"
+  ],
+  "vid": [],
+  "user": null,
+  "status": "Libre",
+  "votes": 0
+},
+{
+  "id": "1748573425929",
+  "name": "sasori",
+  "gender": "hombre",
+  "value": "8000",
+  "source": "Naruto",
+  "img": [
+    "https://files.catbox.moe/3tkb5y.jpg",
+    "https://files.catbox.moe/5lu8x3.jpg",
+    "https://files.catbox.moe/i7u44s.jpg"
+  ],
+  "vid": [],
+  "user": null,
+  "status": "Libre",
+  "votes": 0
+},
+{
+  "id": "1748573413552",
+  "name": "Hidan",
+  "gender": "hombre",
+  "value": "8500",
+  "source": "Naruto",
+  "img": [
+    "https://files.catbox.moe/9hs376.jpg",
+    "https://files.catbox.moe/doc7y7.jpg",
+    "https://files.catbox.moe/ncfq4a.jpg"
+  ],
+  "vid": [],
+  "user": null,
+  "status": "Libre",
+  "votes": 0
+},
+{
+  "id": "1748573397040",
+  "name": "hiruzen sarutobi",
+  "gender": "hombre",
+  "value": "10000",
+  "source": "naruto",
+  "img": [
+    "https://files.catbox.moe/8080vp.jpg",
+    "https://files.catbox.moe/jidghe.jpg",
+    "https://files.catbox.moe/j5pyde.jpg"
+  ],
+  "vid": [],
+  "user": null,
+  "status": "Libre",
+  "votes": 0
+},
+{
+  "id": "1748573368368",
+  "name": "kakashi hakate",
+  "gender": "hombre",
+  "value": "11111",
+  "source": "naruto",
+  "img": [
+    "https://files.catbox.moe/e9i7qt.jpg",
+    "https://files.catbox.moe/skkk03.jpg",
+    "https://files.catbox.moe/3ex5hr.jpg"
+  ],
+  "vid": [],
+  "user": null,
+  "status": "Libre",
+  "votes": 0
+},
+{
+  "id": "1748573368368",
+  "name": "kakashi hakate",
+  "gender": "hombre",
+  "value": "11111",
+  "source": "naruto",
+  "img": [
+    "https://files.catbox.moe/e9i7qt.jpg",
+    "https://files.catbox.moe/skkk03.jpg",
+    "https://files.catbox.moe/3ex5hr.jpg"
+  ],
+  "vid": [],
+  "user": null,
+  "status": "Libre",
+  "votes": 0
+},
+{
+  "id": "1748573351795",
+  "name": "jiraya",
+  "gender": "hombre",
+  "value": "11090",
+  "source": "naruto",
+  "img": [
+    "https://files.catbox.moe/3ay92g.jpg",
+    "https://files.catbox.moe/56ihkp.jpg",
+    "https://files.catbox.moe/js32b0.jpg"
+  ],
+  "vid": [],
+  "user": null,
+  "status": "Libre",
+  "votes": 0
+},
+{
+  "id": "1748573368368",
+  "name": "kakashi hakate",
+  "gender": "hombre",
+  "value": "11111",
+  "source": "naruto",
+  "img": [
+    "https://files.catbox.moe/e9i7qt.jpg",
+    "https://files.catbox.moe/skkk03.jpg",
+    "https://files.catbox.moe/3ex5hr.jpg"
+  ],
+  "vid": [],
+  "user": null,
+  "status": "Libre",
+  "votes": 0
+},
+{
+  "id": "1748573368368",
+  "name": "kakashi hakate",
+  "gender": "hombre",
+  "value": "11111",
+  "source": "naruto",
+  "img": [
+    "https://files.catbox.moe/e9i7qt.jpg",
+    "https://files.catbox.moe/skkk03.jpg",
+    "https://files.catbox.moe/3ex5hr.jpg"
+  ],
+  "vid": [],
+  "user": null,
+  "status": "Libre",
+  "votes": 0
+},
+{
+  "id": "1748573351795",
+  "name": "jiraya",
+  "gender": "hombre",
+  "value": "11090",
+  "source": "naruto",
+  "img": [
+    "https://files.catbox.moe/3ay92g.jpg",
+    "https://files.catbox.moe/56ihkp.jpg",
+    "https://files.catbox.moe/js32b0.jpg"
+  ],
+  "vid": [],
+  "user": null,
+  "status": "Libre",
+  "votes": 0
+},
+{
+  "id": "1748573341708",
+  "name": "óbito uchiha",
+  "gender": "hombre",
+  "value": "10000",
+  "source": "naruto",
+  "img": [
+    "https://files.catbox.moe/9rr25o.jpg",
+    "https://files.catbox.moe/hzatqb.jpg",
+    "https://files.catbox.moe/on8b1w.jpg"
+  ],
+  "vid": [],
+  "user": null,
+  "status": "Libre",
+  "votes": 0
+},
+{
+  "id": "1748573328047",
+  "name": "hashirama senju",
+  "gender": "hombre",
+  "value": "11000",
+  "source": "naruto",
+  "img": [
+    "https://files.catbox.moe/q6ec7g.jpg",
+    "https://files.catbox.moe/2npwxp.jpg",
+    "https://files.catbox.moe/au9pln.jpg"
+  ],
+  "vid": [],
+  "user": null,
+  "status": "Libre",
+  "votes": 0
+},
+{
+  "id": "1748573314049",
+  "name": "konan",
+  "gender": "mujer",
+  "value": "10000",
+  "source": "naruto",
+  "img": [
+    "https://files.catbox.moe/y4sheg.jpg",
+    "https://files.catbox.moe/f61f5f.jpg",
+    "https://files.catbox.moe/cum5f8.jpg"
+  ],
+  "vid": [],
+  "user": null,
+  "status": "Libre",
+  "votes": 0
+},
+{
+  "id": "1748573310698",
+  "name": "Minato namikase",
+  "gender": "hombre",
+  "value": "11092",
+  "source": "naruto",
+  "img": [
+    "https://files.catbox.moe/s7dlbd.jpp",
+    "https://files.catbox.moe/5kat86.jpg",
+    "https://files.catbox.moe/my3ll8.jpg"
+  ],
+  "vid": [],
+  "user": null,
+  "status": "Libre",
+  "votes": 0
+}
 ]
