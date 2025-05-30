@@ -1,15 +1,12 @@
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-  // Solo los owners permanentes pueden usarlo
-  const PERMANENT_OWNERS = [
-    '524181450063', // 𝕱𝖊𝖗𝖓𝖆𝖓𝖉𝖔 Creador 🜲
-    '527461177130', // ASTA_BOT
-    '5216631079388', // neykor 🜲
-    '5214181491264', // fernando 2
-    // Agrega aquí más si los tienes en FIXED_OWNERS
-  ]
+  // Solo owners pueden usar este comando
   let senderNum = m.sender.replace(/[^0-9]/g, '')
-  if (!PERMANENT_OWNERS.includes(senderNum)) {
-    return m.reply('⛔ Solo los owners permanentes pueden usar este comando.')
+  // Busca entre todos los owners (soporta formato array de arrays)
+  let isOwner = Array.isArray(global.owner)
+    ? global.owner.some(o => Array.isArray(o) ? o[0] === senderNum : o === senderNum)
+    : false
+  if (!isOwner) {
+    return m.reply('⛔ Solo los owners pueden usar este comando.')
   }
 
   // Permitir obtener usuario por mención, argumento o remitente
@@ -54,7 +51,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   m.reply(info)
 }
 handler.help = ['userinfo <número>']
-handler.tags = ['info','tools']
+handler.tags = ['info', 'tools']
 handler.command = ['userinfo', 'infouser', 'buscaruser', 'datosuser']
 handler.group = false
 
