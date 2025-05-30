@@ -2,111 +2,73 @@ let handler = async (m, { conn, usedPrefix }) => {
     const menu = `
 👥 *COLABORADORES DEL BOT* 👥
 
-╭━━━━━━━━━━━━━━━━━━━━━━━━━━╮
+╭─────────────────────╮
 ┃ 🎖️ *CREADOR PRINCIPAL* 🎖️
-╰━━━━━━━━━━━━━━━━━━━━━━━━━━╯
+╰─────────────────────╯
 
 👑 **CREADOR DEL BOT**
-┌─────────────────────────┐
-│ 📱 +52 418 145 0063      
-│ 🌐 github.com/Fer280809  
-│ ⭐ *Rol:* Fundador y Creador
-└─────────────────────────┘
+┌──────────────────┐
+│ 📱 +52 418 145 0063
+│ 🌐 github.com/Fer280809
+│ ⭐ *Rol:* Fundador
+└──────────────────┘
 
 🤖 **ASTA_BOT FERNANDO**
-┌─────────────────────────┐
-│ 📱 +52 746 117 7130      
-│ 🎯 *Rol:* Bot oficial del creador
-└─────────────────────────┘
+┌──────────────────┐
+│ 📱 +52 746 117 7130
+│ 🎯 *Rol:* Bot oficial
+└──────────────────┘
 
-╭━━━━━━━━━━━━━━━━━━━━━━━━━━╮
-┃ 🔥 *EQUIPO DE DESARROLLADORES* 🔥
-╰━━━━━━━━━━━━━━━━━━━━━━━━━━╯
+╭─────────────────────╮
+┃ 🔥 *DESARROLLADORES* 🔥
+╰─────────────────────╯
 
 🚀 **JAVI**
-┌─────────────────────────┐
-│ 📱 +52 664 786 8496      
-│ 🌐 github.com/javi16-art 
-│ ⚡ *Especialidad:* Desarrollo de comandos
-└─────────────────────────┘
+📱 +52 664 786 8496
+🌐 github.com/javi16-art
+⚡ Desarrollo de comandos
 
 🎨 **PABLO**
-┌─────────────────────────┐
-│ 📱 +51 907 512 473       
-│ 🌐 github.com/Erickztone
-│ 🎭 *Especialidad:* Centro de creación de personajes
-└─────────────────────────┘
+📱 +51 907 512 473
+🌐 github.com/Erickztone
+🎭 Creación de personajes
 
 🤝 **NOSE**
-┌─────────────────────────┐
-│ 📱 +51 927 917 562       
-│ 👑 *Especialidad:* Mano derecha del creador
-└─────────────────────────┘
+📱 +51 927 917 562
+👑 Mano derecha del creador
 
 📢 **PAUL**
-┌─────────────────────────┐
-│ 📱 +593 98 544 0092      
-│ 🌐 github.com/PAYASOBOT24
-│ 🎪 *Especialidad:* Publicidad
-└─────────────────────────┘
+📱 +593 98 544 0092
+🌐 github.com/PAYASOBOT24
+🎪 Publicidad
 
-╭━━━━━━━━━━━━━━━━━━━━━━━━━━╮
-┃ 🌟 *RESUMEN DEL EQUIPO* 🌟
-╰━━━━━━━━━━━━━━━━━━━━━━━━━━╯
+╭─────────────────────╮
+┃ 🌟 *RESUMEN* 🌟
+╰─────────────────────╯
 
-*📊 Estadísticas del equipo:*
-• 👑 1 Creador principal
+📊 *Equipo:*
+• 👑 1 Creador
 • 🤖 1 Bot oficial
-• 💻 4 Desarrolladores especializados
+• 💻 4 Desarrolladores
 
-*🌍 Cobertura internacional:*
-• 🇲🇽 México - Creador, Asta_bot y Javi
-• 🇵🇪 Perú - Nose y Pablo
-• 🇪🇨 Ecuador - Paul
+🌍 *Países:*
+🇲🇽 México - 🇵🇪 Perú - 🇪🇨 Ecuador
 
-*⚡ Especialidades del equipo:*
-• Desarrollo de comandos
-• Creación de personajes
-• Administración avanzada
-• Marketing y publicidad
+╭─────────────────────╮
+┃ 🚀 *¿SER DEVELOPER?* 🚀
+╰─────────────────────╯
 
-╭━━━━━━━━━━━━━━━━━━━━━━━━━━╮
-┃ 💎 *MENSAJE DEL EQUIPO* 💎
-╰━━━━━━━━━━━━━━━━━━━━━━━━━━╯
+💡 *¡Únete al equipo!*
 
-*🎉 ¡Gracias por usar nuestro bot!*
-*Cada uno de nosotros trabaja con dedicación*
-*para ofrecerte la mejor experiencia posible* ✨
+📝 *Aplica aquí:*
+https://surveyheart.com/form/6835fa3f543db626e9bdd8a2
 
-*🚀 Nuestro compromiso:*
-• Innovación constante
-• Soporte de calidad 24/7
-• Comunidad unida y activa
-• Desarrollo colaborativo
+⚠️ *IMPORTANTE:*
+• Usa información REAL
+• El creador te contactará
+• Buscamos talento comprometido
 
-_Desarrollado con ❤️ por todo el equipo de desarrolladores_
-
-╭━━━━━━━━━━━━━━━━━━━━━━━━━━╮
-┃ 🚀 *¿QUIERES SER DESARROLLADOR?* 🚀
-╰━━━━━━━━━━━━━━━━━━━━━━━━━━╯
-
-*💡 ¡Únete a nuestro equipo de desarrollo!*
-
-*📝 Para aplicar como desarrollador:*
-• Responde nuestro cuestionario oficial
-• Enlace: https://surveyheart.com/form/6835fa3f543db626e9bdd8a2
-
-*⚠️ IMPORTANTE:*
-• 📋 Proporciona información **REAL** y completa
-• 📞 El creador se pondrá en contacto contigo
-• ✅ Revisamos cada respueta que se evia cuidadosamente
-• 🎯 Buscamos personas comprometidas y talentosas
-
-*🌟 Lo que valoramos:*
-• Experiencia en programación
-• Creatividad e innovación
-• Trabajo en equipo
-• Compromiso con el proyecto
+_Desarrollado con ❤️ por el equipo_
     `
     m.reply(menu)
 }
