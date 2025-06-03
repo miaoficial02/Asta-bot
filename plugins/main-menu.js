@@ -8,24 +8,24 @@ let handler = async (m, { conn, args }) => {
     let totalCommands = Object.values(global.plugins).filter((v) => v.help && v.tags).length
     
     let txt = `
-    ✦...*BIENENIDO*...✦
-    ✦@${userId.split('@')[0]}✦
+🌟⭐ *${botname}* ⭐🌟
+╭─━━━━━━━━━━━━━━━━━━━━━━━━━━━─╮
+│ 🎭 ¡Hola @${userId.split('@')[0]}! 💖
+╰─━━━━━━━━━━━━━━━━━━━━━━━━━━━─╯
 
-> ✰ Hola! Me llamo ✰
-*${botname}*  
-
-╭──────────┈ ↷
-│ *❀ Modo BOT* »
-│      Publico
-│ *✦ Bot* »
-│    ${(conn.user.jid == global.conn.user.jid ? 'No oficial 🅥' : 'Sup Bot🅑')}
-│ *ⴵ Activada* »
-│  ${uptime}
-│ *✰ Total de usuarios* »
-│     ${totalreg}
-│ *✧ Total de Comandos* »
-│  ${totalCommands}
-╰─────────────
+✨ *ɪɴғᴏ ʙᴏᴛ* ✨
+┏━━━━━━━━━━━━━━━━━━━━┓
+┃ 🤖 Estado: ${(conn.user.jid == global.conn.user.jid ? '🟢 ᴘʀɪɴᴄɪᴘᴀʟ' : '🔗 sᴜʙ-ʙᴏᴛ')}
+┃ ⚡ Activo: 『${uptime}』
+┃ 👥 Users: 『${totalreg}』🔥
+┃ 🛠️ Comandos: 『${totalCommands}』⚙️
+┃ 📅 Fecha: ${moment().tz('America/Mexico_City').format('DD/MM/YYYY')}
+┃ 🕐 Hora: ${moment().tz('America/Mexico_City').format('HH:mm:ss')}
+┃ 🌍 Servidor: México 🇲🇽
+┃ 📡 Ping: Online ✅
+┃ 💾 Memoria: Estable 📊
+┃ 🔒 Modo: Privado 🔐
+┗━━━━━━━━━━━━━━━━━━━━┛
 📑 Canal oficial
 
   https://whatsapp.com/channel/0029VbAoYE99hXF1wm3zmQ21
