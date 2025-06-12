@@ -20,7 +20,6 @@ global.owner = [
   ['5217461177130',  'ASTA_BOT', true],
   ['5216631079388', ' neykor 🜲', true],
   ['5931985440092', ' Paul', true],
-  ['511907512473', ' Pablo', true],
   ['5216647868496', ' javi', true],
   ['51927917562', ' peruano', true],
 ];
@@ -62,8 +61,8 @@ global.avatar = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwEy
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.gp1 = 'https://chat.whatsapp.com/BWwvJ4h5lzuLhIuXsBK0Wh'
-global.comunidad1 = 'https://chat.whatsapp.com/JONU3lLJhCf0JgCuL13gwk'
+global.gp1 = 'https://chat.whatsapp.com/KSguXoCQYFv9ysjhQVTewp'
+global.comunidad1 = 'https://chat.whatsapp.com/KKwDZn5vDAE6MhZFAcVQeO'
 global.channel = 'https://whatsapp.com/channel/0029VbAoYE99hXF1wm3zmQ21'
 global.channel2 = 'https://whatsapp.com/channel/0029VbAoYE99hXF1wm3zmQ21'
 global.md = 'https://github.com/Fer280809/Asta_bot'
