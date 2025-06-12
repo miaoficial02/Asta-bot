@@ -67,7 +67,7 @@ global.waittt = '❍ Espera un momento, soy lenta...';
 global.waitttt = '❍ Espera un momento, soy lenta...';
 
 var canal = 'https://whatsapp.com/channel/0029VbAoYE99hXF1wm3zmQ21'  
-var comunidad = 'https://chat.whatsapp.com/JONU3lLJhCf0JgCuL13gwk'
+var comunidad = 'https://chat.whatsapp.com/KKwDZn5vDAE6MhZFAcVQeO'
 var git = 'https://github.com/Fer280809'
 var github = 'https://github.com/Fer280809/Asta_bot' 
 let correo = 'fer280809fl@gmail.com'
