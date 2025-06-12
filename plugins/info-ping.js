@@ -21,16 +21,14 @@ let handler = async (m, { conn }) => {
     
     // Añadir emojis y estilos
     let pingMessage = `
-╭━━━━━❰ 🚀 *PING* 🚀 ❱━━━━━╮
+ 🚀 *PING* 🚀 
 ┃
-┃ ⏱️ *Latencia:* ${latensi.toFixed(2)}ms
-┃ 🔄 *Tiempo activo:* ${uptime}
-┃ 💻 *CPU:* ${cpuUsage}% uso
-┃ 🧠 *RAM:* ${memoryUsed.toFixed(2)}/${totalMemory.toFixed(2)} GB (${memoryPercent}%)
-┃ 
-┃ 🤖 *¡Bot listo para servirte!* ✨
-┃
-╰━━━━━━━━━━━━━━━━━━╯`;
+ ⏱️ *Latencia:* ${latensi.toFixed(2)}ms
+ 🔄 *Tiempo activo:* ${uptime}
+ 
+ 🤖 *¡Bot listo para servirte!* ✨
+
+`;
 
     conn.reply(m.chat, pingMessage, m);
   });
