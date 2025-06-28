@@ -1,7 +1,7 @@
 import PhoneNumber from 'awesome-phonenumber';
 
 let handler = async (m, { conn }) => {
-  m.react('👋');
+  m.react('👑');
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender;
   let pp = await conn.profilePictureUrl(who).catch(_ => 'https://qu.ax/PRgfc.jpg');
   let biografia = await conn.fetchStatus(`${suittag}@s.whatsapp.net`).catch(_ => 'Sin Biografía');
@@ -11,7 +11,7 @@ let handler = async (m, { conn }) => {
   let name = await conn.getName(who);
 
   await sendContactArray(conn, m.chat, [
-    [`${suittag}`, `𝕱𝖊𝖗𝖓𝖆𝖓𝖉𝖔`, botname, `❀ No Hacer Spam`, correo, `⊹˚• Mexico •˚⊹`, md, bio],
+    [`${suittag}`, `𝐢𝐭𝐬.𝐦𝐢𝐚.𝐨𝐟𝐢𝐜𝐢𝐬𝐥`, botname, `❀ No Hacer Spam`, correo, `⊹˚• 𝐀𝐫𝐠𝐞𝐧𝐭𝐢𝐧𝐚•˚⊹`, md, bio],
     [`${conn.user.jid.split('@')[0]}`, `✦ Es Un Bot`, packname, dev, correo, `Donde vives tu 🫏`, channel, biobot],
     [`527461177130`, `Asistencia`, `Bot Oficial`, `Asistencia del Bot`, correo, `Mexico`, channel, `Bot de Asistencia`] // Información del nuevo contacto
   ], m);
