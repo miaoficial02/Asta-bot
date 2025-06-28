@@ -13,7 +13,6 @@ let handler = async (m, { conn }) => {
   await sendContactArray(conn, m.chat, [
     [`${suittag}`, `𝐢𝐭𝐬.𝐦𝐢𝐚.𝐨𝐟𝐢𝐜𝐢𝐬𝐥`, botname, `❀ No Hacer Spam`, correo, `⊹˚• 𝐀𝐫𝐠𝐞𝐧𝐭𝐢𝐧𝐚•˚⊹`, md, bio],
     [`${conn.user.jid.split('@')[0]}`, `✦ Es Un Bot`, packname, dev, correo, `Donde vives tu 🫏`, channel, biobot],
-    [`527461177130`, `Asistencia`, `Bot Oficial`, `Asistencia del Bot`, correo, `Mexico`, channel, `Bot de Asistencia`] // Información del nuevo contacto
   ], m);
 }
 
