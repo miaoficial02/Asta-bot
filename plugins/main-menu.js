@@ -8,7 +8,7 @@ let handler = async (m, { conn, args }) => {
     let totalCommands = Object.values(global.plugins).filter((v) => v.help && v.tags).length
     
     let txt = `
-    ✦...*BIENENIDO*...✦
+    ✦...*BIENVENIDO*...✦
     ✦@${userId.split('@')[0]}✦
 
 > ✰ Hola! Me llamo ✰
@@ -18,7 +18,7 @@ let handler = async (m, { conn, args }) => {
 │ *❀ Modo BOT* »
 │      Publico
 │ *✦ Bot* »
-│    ${(conn.user.jid == global.conn.user.jid ? 'NO OFICIAL 🅥' : 'Sup Bot🅑')}
+│    ${(conn.user.jid == global.conn.user.jid ? 'PRINCIPAL 🅥' : 'SUB BOT 🅑')}
 │ *ⴵ Activada* »
 │  ${uptime}
 │ *✰ Total de usuarios* »
@@ -26,11 +26,6 @@ let handler = async (m, { conn, args }) => {
 │ *✧ Total de Comandos* »
 │  ${totalCommands}
 ╰─────────────
-📑 Canal oficial
-
-  https://whatsapp.com/channel/0029VbAoYE99hXF1wm3zmQ21
-
-> ❍ Se bot en el grupo oficial del bot 
 
 > ❍ Crea un *Sub-Bot* con tu número utilizando *#qr* o *#code*
 
@@ -47,10 +42,6 @@ let handler = async (m, { conn, args }) => {
 │  📑 Compra tu bot o pide informacion
 │  ➟ *#allbot*
 ╰━━━━━━━━━━━━━━━━━
-
-
-
-ve si el bot que usas es el oficial velo con #oficial o #botoficial
 
 
 • :･ﾟ⊹˚• \`『 𝐼𝑛𝑓𝑜-𝐵𝑜𝑡 』\` •˚⊹:･ﾟ•
